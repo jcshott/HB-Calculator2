@@ -10,18 +10,19 @@ from arithmetic import *
     
 def main_calculator (lst):
     num_list = lst.split(" ")
-
-    if (len(num_list) == 2 and num_list[1].isdigit()) or (len(num_list)==3 and (num_list[1].isdigit() and num_list[2].isdigit())):
+    valid_functions = ["add", "cube", "subtract", "multiply", "square", "power", "mod", "divide"]
+    if num_list[0] in valid_functions: 
+        print "valid function, proceed."
+        #if (len(num_list) == 2 and num_list[1].isdigit()) or (len(num_list)==3 and (num_list[1].isdigit() and num_list[2].isdigit())):
         if num_list[0] == "add":
-            print add(num_list[1], num_list[2])
-            
+            #print num_list
+            print add(num_list[1:]) 
         elif num_list[0] == "cube":
             print cube(num_list[1])
-
         elif num_list[0] == "subtract":
-            print subtract(num_list[1], num_list[2])
+            print subtract(num_list[1:])
         elif num_list[0] == "multiply":
-            print multiply(num_list[1], num_list[2])
+            print multiply(num_list[1:])
         elif num_list[0] == "square":
             print square(num_list[1])
         elif num_list[0] == "power":
@@ -29,7 +30,7 @@ def main_calculator (lst):
         elif num_list[0] == "mod":
             print mod(num_list[1], num_list[2])
         elif num_list[0] == "divide":
-            print divide(num_list[1], num_list[2])
+            print divide(num_list[1:])
         else: 
             print "You entered an invalid function!"       
     else:

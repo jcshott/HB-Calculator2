@@ -1,13 +1,24 @@
-def add(num1, num2):
-    return int(num1) + int(num2)
+def add(args):
+    print args
+    total = 0
+    for element in args:
+        total += int(element)
+       # print total
+    return total
 
 
-def subtract(num1, num2):
-    return int(num1) - int(num2)
+def subtract(args):
+    total = int(args[0])
+    for element in args[1:]:
+        total -= int(element)
+    return total
 
 
-def multiply(num1, num2):
-    return int(num1) * int(num2)
+def multiply(args):
+    total = 1
+    for element in args:
+        total = total * int(element)
+    return total
 
 
 def divide(num1, num2):
@@ -32,3 +43,4 @@ def power(num1, num2):
 
 def mod(num1, num2):
     return int(num1) % int(num2)
+ 
